@@ -74,7 +74,6 @@ cask "vagrant"
 cask "xquartz"
 
 cask "dropbox"
-cask "github-desktop"
 cask "fastscripts"
 
 # Quick Look plugins
