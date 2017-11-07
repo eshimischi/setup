@@ -14,6 +14,7 @@ brew "curl"
 brew "wget"
 brew "mariadb"
 brew "postgresql"
+brew "gpg2"
 
 brew "ack"
 brew "jq"

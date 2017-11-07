@@ -78,7 +78,7 @@ git config --global user.email "${GIT_EMAIL}"
 
 echo
 echo "${YELLOW}Install some installers...${NC}"
-for file in $(ls ./packages); do
+for file in $(ls ~/dotfiles/packages); do
 	source "${dotfiles_dir}/packages/$file"
 done
 unset file
