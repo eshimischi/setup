@@ -5,7 +5,7 @@ export QTDIR="/opt/Qt"
 export GOPATH="/opt/go/libexec"
 export PKG_CONFIG_PATH="/usr/lib/pkgconfig:/usr/local/lib/pkgconfig:/usr/X11/lib/pkgconfig"
 
-export PATH="/opt/Qt/bin:$(brew --prefix homebrew/php/php71)/bin:/opt/go/bin:${GOPATH}/bin:/opt/depot_tools:${PATH}"
+export PATH="/opt/Qt/bin:$(brew --prefix homebrew/php/php71)/bin:/opt/go/bin:${GOPATH}/bin:/opt/depot_tools:/usr/local/sbin:${PATH}"
 
 export LANG=en_US.UTF-8
 export LC_ALL=en_US.UTF-8

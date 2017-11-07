@@ -9,7 +9,6 @@ tap "homebrew/science"
 
 brew "bash-completion"
 brew "coreutils"
-brew "gfortran"
 
 brew "curl"
 brew "wget"
