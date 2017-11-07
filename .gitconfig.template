@@ -1,0 +1,106 @@
+[core]
+    mergeoptions = --no-ff
+    pager = less -r
+    editor = subl -n -w
+    autocrlf = input
+
+[help]
+    autocorrect = 1
+
+[alias]
+    # Shortcuts
+    st = status -sb
+    co = checkout
+    cob = checkout -b
+    cp = cherry-pick
+    ci = commit
+    up = pull
+    di = diff
+    br = branch
+
+    # Switch to a branch, creating it if necessary
+	go = "!f() { git checkout -b \"$1\" 2> /dev/null || git checkout \"$1\"; }; f"
+
+    tags = tag -l
+    branches = branch -a
+    remotes = remote -v
+
+    save = !git add -A && git commit -m "SAVEPOINT"
+    wip = !git add -u && git commit -m "WIP"
+    undo = reset HEAD~1 --soft
+
+    # Pretty log for current branch
+    lol = log --graph --decorate --pretty=oneline --abbrev-commit
+
+    # Pretty log for all branches
+    hist = log --pretty=format:'%C(yellow)%h%C(reset) %ad | %C(75)%s%C(reset) %C(yellow)%d%C(reset) [%an]' --graph --date=short --branches --all
+
+    # Get hash of latest commit
+    hash = show -s --format=%H
+
+    # Remove branches that have already been merged with master
+    dm = "!git branch --merged | grep -v '\\*' | xargs -n 1 git branch -d"
+    size = "!git bundle create tmp.bundle --all && du -sh tmp.bundle && rm tmp.bundle"
+
+[color]
+    ui = auto
+    interactive = auto
+[color "branch"]
+    current = yellow reverse
+    local = yellow
+    remote = green
+[color "diff"]
+    meta = yellow
+    frag = magenta
+    old = red
+    new = green
+[color "status"]
+    added = yellow
+    changed = green
+    untracked = cyan
+
+[push]
+    default = simple
+[rebase]
+    autosquash = true
+    autostash = true
+
+[filter "lfs"]
+    clean = git-lfs clean %f
+    smudge = git-lfs smudge %f
+    required = true
+[lfs]
+    batch = true
+    concurrenttransfers = 15
+[stash]
+    showPatch = true
+[filter "media"]
+    clean = git media clean %f
+    smudge = git media smudge %f
+    required = true
+[commit]
+    gpgsign = true
+[gpg]
+    program = gpg2
+
+# URL shorthands
+
+[url "git@github.com:"]
+
+	insteadOf = "gh:"
+	pushInsteadOf = "github:"
+	pushInsteadOf = "git://github.com/"
+
+[url "git://github.com/"]
+
+	insteadOf = "github:"
+
+[url "git@gist.github.com:"]
+
+	insteadOf = "gst:"
+	pushInsteadOf = "gist:"
+	pushInsteadOf = "git://gist.github.com/"
+
+[url "git://gist.github.com/"]
+
+	insteadOf = "gist:"

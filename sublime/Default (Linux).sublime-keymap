@@ -1,0 +1,5 @@
+[
+    { "keys": ["ctrl+b"], "command": "toggle_side_bar" },
+    { "keys": ["ctrl+alt+m"], "command": "markdown_preview", "args": { "target": "browser" } },
+    { "keys": ["ctrl+alt+n"], "command": "advanced_new_file"}
+]

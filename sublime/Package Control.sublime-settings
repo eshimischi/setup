@@ -1,0 +1,19 @@
+{
+	"bootstrapped": true,
+	"in_process_packages":
+	[
+	],
+	"installed_packages":
+	[
+		"Alignment",
+		"AutoAligner",
+		"BBCode Syntax",
+		"Dockerfile Syntax Highlighting",
+		"Git Commit Message Syntax",
+		"JSX",
+		"Markdown Preview",
+		"MarkdownEditing",
+		"Material Theme",
+		"Package Control"
+	]
+}
