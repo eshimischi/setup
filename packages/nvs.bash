@@ -6,72 +6,73 @@ echo "Setup NVS"
 # Specify the installation path
 export NVS_HOME="$HOME/.nvs"
 
-# Clone NVS repository
-git clone https://github.com/jasongin/nvs "$NVS_HOME"
+if [ ! -d "$NVS_HOME" ]; then
 
-# Set 777 mode
-sudo chmod -R 777 $NVS_HOME
+	# Clone NVS repository
+	git clone https://github.com/jasongin/nvs "$NVS_HOME"
 
-[ -s "$NVS_HOME/nvs.sh" ] && . "$NVS_HOME/nvs.sh"
+	# Set 777 mode
+	sudo chmod -R 777 $NVS_HOME
 
-# Configs
+	[ -s "$NVS_HOME/nvs.sh" ] && . "$NVS_HOME/nvs.sh"
 
-if nvs --version > /dev/null 2>&1; then
-  nvs add latest
-  nvs link latest
-fi
+	# Configs
 
-if which npm > /dev/null 2>&1; then
+	if nvs --version > /dev/null 2>&1; then
+  		nvs add latest
+  		nvs link latest
+	fi
 
-  if which python2 > /dev/null 2>&1; then
-    npm config set python "$(which python2)"
-  fi
+	if which npm > /dev/null 2>&1; then
 
-  npm config set init.author.name 'Dmitry Laskin'
-  npm config set init.author.email 'eshimischi@gmail.com'
-  npm config set init.author.url 'https://github.com/eshimischi'
+  		if which python2 > /dev/null 2>&1; then
+    		npm config set python "$(which python2)"
+  		fi
 
-  npm config set send-metrics true
+  		npm config set init.author.name 'Dmitry Laskin'
+  		npm config set init.author.email 'eshimischi@gmail.com'
+  		npm config set init.author.url 'https://github.com/eshimischi'
 
-  NPM_FAVOURITES=(
-      "byots"
-      "electron-builder"
-      "gulp"
-      "lebab"
-      "lerna"
-      "node-gyp"
-      "nw-builder"
-      "nw-gyp"
-      "nwjs"
-      "prettier"
-      "typeorm"
-      "typescript"
-      "tslint"
-      "vue-cli"
-  )
+  		npm config set send-metrics true
 
-  echo 'updating NPM and packages...'
-  set +e # private packages will fail on incorrect networks, ignore this
-  npm update --global
-  set -e
+  		NPM_FAVOURITES=(
+      		"electron-builder"
+      		"gulp"
+      		"lerna"
+      		"node-gyp"
+      		"nw-builder"
+      		"nw-gyp"
+      		"nwjs"
+      		"prettier"
+      		"typeorm"
+      		"typescript"
+      		"tslint"
+      		"vue-cli"
+  		)
 
-  echo 'installing favourite NPM packages...'
-  INSTALLED_FAVOURITES=$(npm ls --global --depth=0)
-  for FAV in "${NPM_FAVOURITES[@]}"; do
-    if ! echo "${INSTALLED_FAVOURITES}" | grep " ${FAV}@" > /dev/null 2>&1; then
-      npm install --global $FAV
-    fi
-  done
-    
-fi
+  		echo 'updating NPM and packages...'
+  		set +e # private packages will fail on incorrect networks, ignore this
+  		npm update --global
+  		set -e
 
-if which node > /dev/null 2>&1; then
-  if which node-gyp > /dev/null 2>&1; then
-    node-gyp install "$(node --version)"
-    nw install 0.25.4-sdk
-  fi
-fi
+  		echo 'installing favourite NPM packages...'
+  		INSTALLED_FAVOURITES=$(npm ls --global --depth=0)
+  		for FAV in "${NPM_FAVOURITES[@]}"; do
+    		if ! echo "${INSTALLED_FAVOURITES}" | grep " ${FAV}@" > /dev/null 2>&1; then
+      			npm install --global $FAV
+    		fi
+  		done
 
-if [ -d ~/.config/yarn/global ]; then
-  rm -rf "${HOME}/.config/yarn/global"
+	fi
+
+	if which node > /dev/null 2>&1; then
+  		if which node-gyp > /dev/null 2>&1; then
+    		node-gyp install "$(node --version)"
+    		nw install 0.26.5-sdk
+  		fi
+	fi
+
+	if [ -d ~/.config/yarn/global ]; then
+  		rm -rf "${HOME}/.config/yarn/global"
+	fi
 fi

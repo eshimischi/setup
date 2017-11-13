@@ -49,7 +49,10 @@ alias gi='git commit' && __git_complete gi _git_commit
 alias gam='git commit --amend'
 alias gm='git merge --no-ff' && __git_complete gm _git_merge
 alias gmf='git merge --ff-only' && __git_complete gmf _git_merge
+
+# Personal aliases
 alias gitstash='for dir in $(find . -name ".git"); do cd ${dir%/*}; git stash && git pull ; cd -; done'
+alias brewu='brew update && brew upgrade && brew cleanup --cache'
 
 alias gd='git diff'
 # Git diff parent
