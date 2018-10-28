@@ -120,7 +120,6 @@ brew "pkg-config"
 brew "protobuf"
 brew "qrencode"
 brew "fpp"
-brew "
 
 ################
 # Core stuff
