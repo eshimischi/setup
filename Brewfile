@@ -4,7 +4,6 @@ tap "homebrew/core"
 tap "homebrew/command-not-found"
 tap "homebrew/services"
 tap "beeftornado/rmtree"
-tap "homebrew/science"
 tap "caskroom/fonts"
 tap "domt4/autoupdate"
 
@@ -69,9 +68,6 @@ brew "youtube-dl"
 
 brew "php72"
 brew "composer"
-
-brew "php72-imagick"
-brew "php72-swoole"
 
 brew "python"
 brew "python3"
