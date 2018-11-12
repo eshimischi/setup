@@ -19,8 +19,8 @@ if [ ! -d "$NVS_HOME" ]; then
 	# Configs
 
 	if nvs --version > /dev/null 2>&1; then
-  		nvs add latest
-  		nvs link latest
+  		nvs add 8.12.0
+  		nvs link 8.12.0
 	fi
 
 	if which npm > /dev/null 2>&1; then
@@ -102,7 +102,7 @@ if [ ! -d "$NVS_HOME" ]; then
 	if which node > /dev/null 2>&1; then
   		if which node-gyp > /dev/null 2>&1; then
     		node-gyp install "$(node --version)"
-    		nw install 0.26.5-sdk
+    		nw install 0.34.2-sdk
   		fi
 	fi
 

@@ -82,7 +82,7 @@ brew "sbt"
 
 brew "htop"
 brew "pv"
-brew "osquaery"
+brew "osquery"
 brew "boost"
 brew "c-ares"
 brew "cabal-install"
@@ -121,7 +121,7 @@ brew "fpp"
 # Core stuff
 ################
 cask "java"
-cask "postman"
+#cask "postman"
 cask "virtualbox"
 cask "virtualbox-extension-pack"
 
@@ -130,22 +130,21 @@ cask "xquartz"
 
 cask "fastlane"
 cask "genymotion"
-cask "imageoptim"
+#cask "imageoptim"
 
 cask "dropbox"
 cask "fastscripts"
 
-cask "iterm2"
+#cask "iterm2"
 cask "spectacle"
-cask "sourcetree"
-cask "typora"
+#cask "sourcetree"
 cask "google-hangouts"
 
-cask "gpgtools"
-mas "Flycut", id: 442160987
+#cask "gpgtools"
+#mas "Flycut", id: 442160987
 
 cask "cakebrew"
-cask "gitHub-desktop"
+#cask "gitHub-desktop"
 cask "keepassx"
 
 # Developer
@@ -158,7 +157,7 @@ cask "syncthing-bar"
 cask "prey"
 
 # Quick Look plugins
-cask "betterzipql"
+#cask "betterzipql"
 cask "qlcolorcode"
 cask "qlmarkdown"
 cask "qlimagesize"
@@ -180,7 +179,7 @@ cask "colorpicker-skalacolor"
 
 # Installing Fonts
 cask "font-dosis"
-cask "font-droid-sans"
+#cask "font-droid-sans"
 cask "font-open-sans"
 cask "font-open-sans-condensed"
 cask "font-roboto"
@@ -201,9 +200,9 @@ cask "font-noto-serif"
 cask "font-source-sans-pro"
 cask "font-source-serif-pro"
 cask "font-ubuntu"
-cask "font-pt-mono"
-cask "font-pt-sans"
-cask "font-pt-serif"
+#cask "font-pt-mono"
+#cask "font-pt-sans"
+#cask "font-pt-serif"
 cask "font-fira-mono"
 cask "font-fira-mono-for-powerline"
 cask "font-fira-code"
